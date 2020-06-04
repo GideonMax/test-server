@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import H from "https://js.api.here.com/v3/3.1/mapsjs.bundle.js";
 /**
  * Moves the map to display over Berlin
@@ -33,10 +34,10 @@ window.addEventListener('resize', () => map.getViewPort().resize());
 //Step 3: make the map interactive
 // MapEvents enables the event system
 // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
-/*var behavior =*/ new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
 // Create the default UI components
-/*var ui =*/ H.ui.UI.createDefault(map, defaultLayers);
+var ui = H.ui.UI.createDefault(map, defaultLayers);
 
 // Now use the map as required...
 window.onload = function () {
