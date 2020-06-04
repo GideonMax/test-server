@@ -16,7 +16,6 @@ class MapElement extends HTMLElement {
                 'apikey': apiKey
             });
             this.defaultLayers = this.platform.createDefaultLayers();
-
         }
     }
     connectedCallback() {
@@ -30,7 +29,11 @@ class MapElement extends HTMLElement {
                     center: { lat: 52.5, lng: 13.4 }
                 });
             this.behavior = new Maps.mapevents.Behavior(new Maps.mapevents.MapEvents(this.map));
-            this.ui = Maps.ui.UI.createDefault(this.map, this.defaultLayers);
+            this.ui = Maps.ui.UI.createDefault(this.map, this.defaultLayers, 'de-DE');
+            var bubble = new Maps.ui.InfoBubble({ lng: 13.4, lat: 52.51 }, {
+                content: '<b>Hello World!</b>'
+            });
+            this.ui.addBubble(bubble);
         }
     }
 
